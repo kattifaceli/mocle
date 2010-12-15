@@ -1,0 +1,63 @@
+.TH "ValidationIndex" 3 "27 Jul 2010" "Version version2.0" "MOCLE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ValidationIndex \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ValidationIndex.h>\fP
+.PP
+Inherited by \fBConnectivity\fP, \fBCRIndex\fP\fC [private]\fP, \fBDeviation\fP, \fBNMIIndex\fP\fC [private]\fP, \fBSilhouette\fP, and \fBVIIndex\fP\fC [private]\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBcalculate\fP (\fBPartition\fP *pAPartition, \fBRelationSDN\fP *pARelation, \fBDataSet\fP *pDataSet)=0"
+.br
+.ti -1c
+.RI "virtual double \fBcalculate\fP (\fBPartition\fP &objPartition1, \fBPartition\fP &objPartition2)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract class with two calculate methods, the one with two parameters is to be used in external validation measures and the one with one parameter is to be used in internal validation measures 
+.PP
+Definition at line 22 of file ValidationIndex.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual double ValidationIndex::calculate (\fBPartition\fP & objPartition1, \fBPartition\fP & objPartition2)\fC [pure virtual]\fP"Method virtual from return value of measure validation external 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBPartition\fP\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value from measure validation 
+.RE
+.PP
+
+.PP
+Implemented in \fBConnectivity\fP, \fBCRIndex\fP, \fBDeviation\fP, \fBNMIIndex\fP, \fBSilhouette\fP, and \fBVIIndex\fP.
+.SS "virtual double ValidationIndex::calculate (\fBPartition\fP * pAPartition, \fBRelationSDN\fP * pARelation, \fBDataSet\fP * pDataSet)\fC [pure virtual]\fP"Method virtual from return value of measure validation internal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBPartition\fP,\fBRelationSDN\fP\fP and \fBDataSet\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value from measure validation 
+.RE
+.PP
+
+.PP
+Implemented in \fBConnectivity\fP, \fBCRIndex\fP, \fBDeviation\fP, \fBNMIIndex\fP, \fBSilhouette\fP, and \fBVIIndex\fP.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MOCLE from the source code.

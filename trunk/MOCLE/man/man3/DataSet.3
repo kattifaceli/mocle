@@ -1,0 +1,242 @@
+.TH "DataSet" 3 "27 Jul 2010" "Version version2.0" "MOCLE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DataSet \- 
+.PP
+Responsible to manage the dataset file into the memory.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataSet.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataSet\fP ()"
+.br
+.ti -1c
+.RI "\fBDataSet\fP (string sPathADataSet, string sANameDataSet)"
+.br
+.ti -1c
+.RI "map< string, map< string, double > > \fBgenerateMatrix\fP (\fBSimilarity\fP *pAObSimilarity)"
+.br
+.ti -1c
+.RI "void \fBtabulateMappingDataSet\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNumberOfFeature\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNumberOfObjects\fP ()"
+.br
+.ti -1c
+.RI "string \fBgetNameDataSet\fP ()"
+.br
+.ti -1c
+.RI "map< string, vector< double > > \fBgetMapVector\fP ()"
+.br
+.ti -1c
+.RI "fs::path \fBgetPathToDataSet\fP ()"
+.br
+.ti -1c
+.RI "vector< string > \fBgetVElements\fP ()"
+.br
+.ti -1c
+.RI "\fBRelationSDN\fP * \fBgetRelation\fP (int iAPosRelation)"
+.br
+.ti -1c
+.RI "void \fBaddNewRelationSDN\fP (\fBSimilarity\fP *pAObSimilarity)"
+.br
+.ti -1c
+.RI "void \fBsetNameDataSet\fP (string sANameDataSet)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "vector< \fBSimilarity\fP * > \fBvectorObSimilarity\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Responsible to manage the dataset file into the memory. 
+
+\fBAuthor:\fP
+.RS 4
+Valter Henrique, Gustavo Henrique 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+01/02/10 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+2.0 Dataset class is responsible to inform the data to MOCLE 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file DataSet.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DataSet::DataSet ()"Does nothing 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDon't\fP have any parameter 
+.RE
+.PP
+
+.SS "DataSet::DataSet (string sPathADataSet, string sANameDataSet)"Ask to the user what kind format is the dataset then choose a specific method to pass the dataset to memory of the computer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIthe\fP path to the dataset in the computer 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file DataSet.cpp.
+.PP
+References tabulateMappingDataSet().
+.SH "Member Function Documentation"
+.PP 
+.SS "void DataSet::addNewRelationSDN (\fBSimilarity\fP * pAObSimilarity)"Add new object \fBRelationSDN\fP in vectorRelations vector 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIObject\fP similarity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Don't have 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file DataSet.cpp.
+.PP
+References generateMatrix(), RelationSDN::setNnList(), RelationSDN::setSimilarity(), and RelationSDN::setSimilarityMatrix().
+.SS "map< string, map< string, double > > DataSet::generateMatrix (\fBSimilarity\fP * pAObSimilarity)"Generate the Distance matrix get in the dataset file to the memory 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIObject\fP similarity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Matrix map 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file DataSet.cpp.
+.PP
+References Similarity::calculate().
+.PP
+Referenced by addNewRelationSDN().
+.SS "map< string, vector< double > > DataSet::getMapVector ()"Returns the dataset mapped int th struct 
+.PP
+\fBReturns:\fP
+.RS 4
+pathToDataSet 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file DataSet.cpp.
+.PP
+Referenced by Silhouette::calculate(), and Deviation::calculate().
+.SS "int DataSet::getNumberOfFeature ()"Returns the number of features existing in dataset 
+.PP
+\fBReturns:\fP
+.RS 4
+iNumFeatures 
+.RE
+.PP
+
+.PP
+Definition at line 119 of file DataSet.cpp.
+.SS "int DataSet::getNumberOfObjects ()"Returns the number of objects existing in dataset 
+.PP
+\fBReturns:\fP
+.RS 4
+iNumFeatures 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file DataSet.cpp.
+.PP
+Referenced by Connectivity::calculate(), and Partition::generateRandomPartition().
+.SS "\fBRelationSDN\fP * DataSet::getRelation (int iAPosRelation)"Return pointer for vector \fBRelationSDN\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIPosition\fP of vector 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+RelationSDN* 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file DataSet.cpp.
+.SS "vector< string > DataSet::getVElements ()"Return vector of all objects from dataset 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDon't\fP have 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+vector<string> 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file DataSet.cpp.
+.PP
+Referenced by Connectivity::calculate().
+.SS "void DataSet::setNameDataSet (string sANameDataSet)"Set the name of the dataset file 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIString\fP sANameDataset 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Don't have 
+.RE
+.PP
+
+.PP
+Definition at line 135 of file DataSet.cpp.
+.SS "void DataSet::tabulateMappingDataSet ()"Read the file passed in the argument pathADatSet and allocate in the memory 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpathADataSet\fP receive the path from the dataset 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file DataSet.cpp.
+.PP
+Referenced by DataSet().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MOCLE from the source code.

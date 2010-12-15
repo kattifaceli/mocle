@@ -1,0 +1,95 @@
+.TH "SimilarityMatrix" 3 "27 Jul 2010" "Version version2.0" "MOCLE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SimilarityMatrix \- 
+.PP
+Generates the matrix of similarity.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimilarityMatrix.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "map< string, map< string, double > > \fBgetMatrix\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMatrix\fP (map< string, map< string, double > > mapAObjMap)"
+.br
+.ti -1c
+.RI "map< string, map< string, double > > \fBgetEuclideanMatrix\fP ()"
+.br
+.ti -1c
+.RI "map< string, map< string, double > > \fBgetPearsonMatrix\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEuclideanMatrix\fP (map< string, map< string, double > > mapAEuclidean)"
+.br
+.ti -1c
+.RI "void \fBsetPearsonMatrix\fP (map< string, map< string, double > > mapAPearson)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Generates the matrix of similarity. 
+
+\fBAuthor:\fP
+.RS 4
+Katti Facelli 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+10/02/10 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1.0 Generates the matrix of similarity 
+.RE
+.PP
+
+.PP
+Definition at line 30 of file SimilarityMatrix.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "map< string, map< string, double > > SimilarityMatrix::getMatrix ()"Return the similarity matrix 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDon't\fP have 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBSimilarity\fP matrix 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file SimilarityMatrix.cpp.
+.SS "void SimilarityMatrix::setMatrix (map< string, map< string, double > > mapAObjMap)"Set similarity matrix 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIMatrix\fP map 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Don't have 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file SimilarityMatrix.cpp.
+.PP
+Referenced by RelationSDN::setSimilarityMatrix().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MOCLE from the source code.

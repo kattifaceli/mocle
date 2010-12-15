@@ -1,0 +1,304 @@
+\hypertarget{classPartition}{
+\section{Partition Class Reference}
+\label{classPartition}\index{Partition@{Partition}}
+}
+
+
+Responsible to manage the partition file into the memory.  
+
+
+{\ttfamily \#include $<$Partition.h$>$}\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Cluster}
+\begin{DoxyCompactList}\small\item\em Each element in the dataset is allocated in one cluster. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPartition_a9700c1c87842936c22fd9a3dc41740e1}{Partition} (string sAPathPartition, string sANamePartition)
+\item 
+void \hyperlink{classPartition_af9c0055c226e56ff0d02c935fc885b7b}{calculateCentroid} (\hyperlink{classDataSet}{DataSet} $\ast$pAObjDataSet)
+\item 
+void \hyperlink{classPartition_a025f8c250b2e7bb9d74ff18e6839105a}{loadPartition} ()
+\item 
+void \hyperlink{classPartition_a2c1bdfc1d754486482e9b0225c4eb184}{generateRandomPartition} (\hyperlink{classDataSet}{DataSet} $\ast$pAObjDataSet)
+\item 
+void \hyperlink{classPartition_a6e63e73de79cb57ef37261c15aedce47}{generatePartitionGroupCluster} (\hyperlink{classDataSet}{DataSet} $\ast$pAObjDataSet)
+\item 
+void \hyperlink{classPartition_a377ce02d44555898657ef992a1d4029a}{printClusterLabels} ()
+\item 
+\hypertarget{classPartition_a8c0c32cb03ce1268c65e0a0fc82520f2}{
+void {\bfseries printClusters} ()}
+\label{classPartition_a8c0c32cb03ce1268c65e0a0fc82520f2}
+
+\item 
+\hypertarget{classPartition_aa34ffcaa66ef17228be6fded9b9e69ac}{
+void {\bfseries showCentroids} ()}
+\label{classPartition_aa34ffcaa66ef17228be6fded9b9e69ac}
+
+\item 
+void \hyperlink{classPartition_a4204d0b43248fb2635607b8f87caff69}{writePartition} ()
+\item 
+Cluster \& \hyperlink{classPartition_ac2382e6bd161f3dc1f3cb6cc2d4a42f2}{getCluster} (int iAPos)
+\item 
+int \hyperlink{classPartition_ae78d06ba7708ffc35f93dfe166315c74}{getNumClusters} ()
+\item 
+int \hyperlink{classPartition_ae59c41688846ed426c0fba2338543440}{getNumObjects} ()
+\item 
+map$<$ string, int $>$ \hyperlink{classPartition_a4b2602b02fe2577c33b9f344a242cd32}{getMObjects} ()
+\item 
+vector$<$ Partition::Cluster $>$ \hyperlink{classPartition_a9d6584bb879af33206176d912d8394d0}{getVObjects} ()
+\item 
+int \hyperlink{classPartition_a5c0dc502d21ecd15279ace3e9cf05cb2}{getLabelClusterOf} (string sAObject)
+\item 
+vector$<$ Partition::Cluster $>$ \hyperlink{classPartition_a30c36aee050b5a222f70feae3a48ab07}{getVectorObjCluster} ()
+\item 
+vector$<$ string $>$ \hyperlink{classPartition_a2e226fe3b809239ceded7aa471339f2d}{getObjectsInCluster} (int ClusterLabel)
+\item 
+vector$<$ double $>$ \hyperlink{classPartition_ab2e66cdee06952b1d1417abedc1b86cc}{getCentroidInCluster} (int ClusterLabel)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Responsible to manage the partition file into the memory. \begin{DoxyAuthor}{Author}
+Valter Henrique, Vinicius Lopes, Gustavo Henrique, Katti Facelli 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+09/02/10 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.0 Colocar um comentário mais detalhado na classe dataset 
+\end{DoxyVersion}
+
+
+Definition at line 26 of file Partition.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPartition_a9700c1c87842936c22fd9a3dc41740e1}{
+\index{Partition@{Partition}!Partition@{Partition}}
+\index{Partition@{Partition}!Partition@{Partition}}
+\subsubsection[{Partition}]{\setlength{\rightskip}{0pt plus 5cm}Partition::Partition (string {\em sAPathPartition}, \/  string {\em sANamePartition})}}
+\label{classPartition_a9700c1c87842936c22fd9a3dc41740e1}
+Does nothing 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have any parameter \end{DoxyParams}
+
+
+Definition at line 10 of file Partition.cpp.
+
+References loadPartition().
+
+\subsection{Member Function Documentation}
+\hypertarget{classPartition_af9c0055c226e56ff0d02c935fc885b7b}{
+\index{Partition@{Partition}!calculateCentroid@{calculateCentroid}}
+\index{calculateCentroid@{calculateCentroid}!Partition@{Partition}}
+\subsubsection[{calculateCentroid}]{\setlength{\rightskip}{0pt plus 5cm}void Partition::calculateCentroid ({\bf DataSet} $\ast$ {\em pAObjDataSet})}}
+\label{classPartition_af9c0055c226e56ff0d02c935fc885b7b}
+Calculate the centroid of the cluster 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+calculateCentroid(DataSet \&obADataSet) 
+\end{DoxySeeAlso}
+
+
+Definition at line 18 of file Partition.cpp.\hypertarget{classPartition_a6e63e73de79cb57ef37261c15aedce47}{
+\index{Partition@{Partition}!generatePartitionGroupCluster@{generatePartitionGroupCluster}}
+\index{generatePartitionGroupCluster@{generatePartitionGroupCluster}!Partition@{Partition}}
+\subsubsection[{generatePartitionGroupCluster}]{\setlength{\rightskip}{0pt plus 5cm}void Partition::generatePartitionGroupCluster ({\bf DataSet} $\ast$ {\em pAObjDataSet})}}
+\label{classPartition_a6e63e73de79cb57ef37261c15aedce47}
+Generates a random partition, grouping the objects in the same cluster,receiving as parameter a point to the object of the dataset 
+\begin{DoxyParams}{Parameters}
+\item[{\em $\ast$obADataSet}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 227 of file Partition.cpp.\hypertarget{classPartition_a2c1bdfc1d754486482e9b0225c4eb184}{
+\index{Partition@{Partition}!generateRandomPartition@{generateRandomPartition}}
+\index{generateRandomPartition@{generateRandomPartition}!Partition@{Partition}}
+\subsubsection[{generateRandomPartition}]{\setlength{\rightskip}{0pt plus 5cm}void Partition::generateRandomPartition ({\bf DataSet} $\ast$ {\em pAObjDataSet})}}
+\label{classPartition_a2c1bdfc1d754486482e9b0225c4eb184}
+Generates a random partition, receiving as parameter a point to the object of the dataset 
+\begin{DoxyParams}{Parameters}
+\item[{\em $\ast$obADataSet}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file Partition.cpp.
+
+References DataSet::getNumberOfObjects().\hypertarget{classPartition_ab2e66cdee06952b1d1417abedc1b86cc}{
+\index{Partition@{Partition}!getCentroidInCluster@{getCentroidInCluster}}
+\index{getCentroidInCluster@{getCentroidInCluster}!Partition@{Partition}}
+\subsubsection[{getCentroidInCluster}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ Partition::getCentroidInCluster (int {\em ClusterLabel})}}
+\label{classPartition_ab2e66cdee06952b1d1417abedc1b86cc}
+Returns the centroid of Cluster 
+\begin{DoxyParams}{Parameters}
+\item[{\em Cluster}]Label \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$double$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file Partition.cpp.
+
+Referenced by Deviation::calculate().\hypertarget{classPartition_ac2382e6bd161f3dc1f3cb6cc2d4a42f2}{
+\index{Partition@{Partition}!getCluster@{getCluster}}
+\index{getCluster@{getCluster}!Partition@{Partition}}
+\subsubsection[{getCluster}]{\setlength{\rightskip}{0pt plus 5cm}Partition::Cluster \& Partition::getCluster (int {\em iAPos})}}
+\label{classPartition_ac2382e6bd161f3dc1f3cb6cc2d4a42f2}
+Returns a specific cluster passing as argument the position where he is allocated 
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]iPos \end{DoxyParams}
+
+
+Definition at line 153 of file Partition.cpp.
+
+Referenced by CRIndex::calculate().\hypertarget{classPartition_a5c0dc502d21ecd15279ace3e9cf05cb2}{
+\index{Partition@{Partition}!getLabelClusterOf@{getLabelClusterOf}}
+\index{getLabelClusterOf@{getLabelClusterOf}!Partition@{Partition}}
+\subsubsection[{getLabelClusterOf}]{\setlength{\rightskip}{0pt plus 5cm}int Partition::getLabelClusterOf (string {\em sAObject})}}
+\label{classPartition_a5c0dc502d21ecd15279ace3e9cf05cb2}
+Returns the cluster's label of parameter sObject 
+\begin{DoxyParams}{Parameters}
+\item[{\em sObject}]indicated the object label \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cluster's label 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file Partition.cpp.
+
+Referenced by Connectivity::calculate().\hypertarget{classPartition_a4b2602b02fe2577c33b9f344a242cd32}{
+\index{Partition@{Partition}!getMObjects@{getMObjects}}
+\index{getMObjects@{getMObjects}!Partition@{Partition}}
+\subsubsection[{getMObjects}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ string, int $>$ Partition::getMObjects ()}}
+\label{classPartition_a4b2602b02fe2577c33b9f344a242cd32}
+Returns mObjects 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+map$<$string, int$>$ mObjects 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file Partition.cpp.\hypertarget{classPartition_ae78d06ba7708ffc35f93dfe166315c74}{
+\index{Partition@{Partition}!getNumClusters@{getNumClusters}}
+\index{getNumClusters@{getNumClusters}!Partition@{Partition}}
+\subsubsection[{getNumClusters}]{\setlength{\rightskip}{0pt plus 5cm}int Partition::getNumClusters ()}}
+\label{classPartition_ae78d06ba7708ffc35f93dfe166315c74}
+Returns the number of cluster existing cluster on the partition, loaded in the \hyperlink{classPartition_a025f8c250b2e7bb9d74ff18e6839105a}{loadPartition()} 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+iNumClusters 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+loadPartition(fs::path pathAPartition), iNumClusters 
+\end{DoxySeeAlso}
+
+
+Definition at line 157 of file Partition.cpp.
+
+Referenced by CRIndex::calculate().\hypertarget{classPartition_ae59c41688846ed426c0fba2338543440}{
+\index{Partition@{Partition}!getNumObjects@{getNumObjects}}
+\index{getNumObjects@{getNumObjects}!Partition@{Partition}}
+\subsubsection[{getNumObjects}]{\setlength{\rightskip}{0pt plus 5cm}int Partition::getNumObjects ()}}
+\label{classPartition_ae59c41688846ed426c0fba2338543440}
+Returns the number of existing objects on the partition, loaded in the \hyperlink{classPartition_a025f8c250b2e7bb9d74ff18e6839105a}{loadPartition()} 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+loadPartition(fs::path pathAPartition) 
+\end{DoxySeeAlso}
+
+
+Definition at line 161 of file Partition.cpp.
+
+Referenced by CRIndex::calculate().\hypertarget{classPartition_a2e226fe3b809239ceded7aa471339f2d}{
+\index{Partition@{Partition}!getObjectsInCluster@{getObjectsInCluster}}
+\index{getObjectsInCluster@{getObjectsInCluster}!Partition@{Partition}}
+\subsubsection[{getObjectsInCluster}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ Partition::getObjectsInCluster (int {\em ClusterLabel})}}
+\label{classPartition_a2e226fe3b809239ceded7aa471339f2d}
+Returns the rotule objects in ClusterLabel 
+\begin{DoxyParams}{Parameters}
+\item[{\em Cluster}]Label \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file Partition.cpp.
+
+Referenced by Silhouette::calculate(), and Deviation::calculate().\hypertarget{classPartition_a30c36aee050b5a222f70feae3a48ab07}{
+\index{Partition@{Partition}!getVectorObjCluster@{getVectorObjCluster}}
+\index{getVectorObjCluster@{getVectorObjCluster}!Partition@{Partition}}
+\subsubsection[{getVectorObjCluster}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Partition::Cluster $>$ Partition::getVectorObjCluster ()}}
+\label{classPartition_a30c36aee050b5a222f70feae3a48ab07}
+Returns the vector all clusters of partition 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$Cluster$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file Partition.cpp.
+
+Referenced by Silhouette::calculate(), and Deviation::calculate().\hypertarget{classPartition_a9d6584bb879af33206176d912d8394d0}{
+\index{Partition@{Partition}!getVObjects@{getVObjects}}
+\index{getVObjects@{getVObjects}!Partition@{Partition}}
+\subsubsection[{getVObjects}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Partition::Cluster $>$ Partition::getVObjects ()}}
+\label{classPartition_a9d6584bb879af33206176d912d8394d0}
+Returns vectorObjects, that contains objects of cluster type 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$Cluster$>$ vObCluster 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file Partition.cpp.\hypertarget{classPartition_a025f8c250b2e7bb9d74ff18e6839105a}{
+\index{Partition@{Partition}!loadPartition@{loadPartition}}
+\index{loadPartition@{loadPartition}!Partition@{Partition}}
+\subsubsection[{loadPartition}]{\setlength{\rightskip}{0pt plus 5cm}void Partition::loadPartition ()}}
+\label{classPartition_a025f8c250b2e7bb9d74ff18e6839105a}
+charge to the partition in the memory, passing in the argument the path to load the partition in memory, passing as argument the path to the partition 
+\begin{DoxyParams}{Parameters}
+\item[{\em pathAPartition}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Partition.cpp.
+
+Referenced by Partition().\hypertarget{classPartition_a377ce02d44555898657ef992a1d4029a}{
+\index{Partition@{Partition}!printClusterLabels@{printClusterLabels}}
+\index{printClusterLabels@{printClusterLabels}!Partition@{Partition}}
+\subsubsection[{printClusterLabels}]{\setlength{\rightskip}{0pt plus 5cm}void Partition::printClusterLabels ()}}
+\label{classPartition_a377ce02d44555898657ef992a1d4029a}
+Print the labels of the partition 
+
+Definition at line 283 of file Partition.cpp.\hypertarget{classPartition_a4204d0b43248fb2635607b8f87caff69}{
+\index{Partition@{Partition}!writePartition@{writePartition}}
+\index{writePartition@{writePartition}!Partition@{Partition}}
+\subsubsection[{writePartition}]{\setlength{\rightskip}{0pt plus 5cm}void Partition::writePartition ()}}
+\label{classPartition_a4204d0b43248fb2635607b8f87caff69}
+write the partition in disk, passing in the argument the path where the user want to save 
+\begin{DoxyParams}{Parameters}
+\item[{\em pathSaveIn}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file Partition.cpp.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Partition.h\item 
+Partition.cpp\end{DoxyCompactItemize}

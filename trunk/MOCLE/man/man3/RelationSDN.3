@@ -1,0 +1,165 @@
+.TH "RelationSDN" 3 "27 Jul 2010" "Version version2.0" "MOCLE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RelationSDN \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RelationSDN.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRelationSDN\fP (\fBSimilarityMatrix\fP objASimilarityMatrix, \fBNnList\fP objANnList, \fBSimilarity\fP *pAObjSimilarity)"
+.br
+.ti -1c
+.RI "\fBSimilarityMatrix\fP \fBgetSimilarityMatrix\fP ()"
+.br
+.ti -1c
+.RI "\fBSimilarity\fP * \fBgetSimilarity\fP ()"
+.br
+.ti -1c
+.RI "\fBNnList\fP \fBgetNnList\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSimilarityMatrix\fP (map< string, map< string, double > > mapObjMap)"
+.br
+.ti -1c
+.RI "void \fBsetSimilarity\fP (\fBSimilarity\fP *pObjSimilarity)"
+.br
+.ti -1c
+.RI "void \fBsetNnList\fP (map< string, map< string, double > > mapObjMap)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBAuthor:\fP
+.RS 4
+Gustavo Rodrigues 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+12/03/10 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+2.0 This class stores an object in which the similarity is generated from this similarity matrix and is created from the list of nearest neighbors. 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file RelationSDN.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBNnList\fP RelationSDN::getNnList ()"Return nearest neighbor list 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDon't\fP have 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Object \fBNnList\fP 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file RelationSDN.cpp.
+.PP
+Referenced by Connectivity::calculate().
+.SS "\fBSimilarity\fP * RelationSDN::getSimilarity ()"Return pointer measure similarity 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDon't\fP have 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer \fBSimilarity\fP 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file RelationSDN.cpp.
+.PP
+Referenced by Silhouette::calculate(), and Deviation::calculate().
+.SS "\fBSimilarityMatrix\fP RelationSDN::getSimilarityMatrix ()"Return object similarity Matrix 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDon't\fP have 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBSimilarity\fP Matrix 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file RelationSDN.cpp.
+.SS "void RelationSDN::setNnList (map< string, map< string, double > > mapObjMap)"Set nearest neighbor list 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIMatrix\fP map 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Don't have 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file RelationSDN.cpp.
+.PP
+References NnList::setNnList().
+.PP
+Referenced by DataSet::addNewRelationSDN().
+.SS "void RelationSDN::setSimilarity (\fBSimilarity\fP * pObjSimilarity)"Set measure similarity 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIPointer\fP similarity 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Don't have 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file RelationSDN.cpp.
+.PP
+Referenced by DataSet::addNewRelationSDN().
+.SS "void RelationSDN::setSimilarityMatrix (map< string, map< string, double > > mapObjMap)"Set object \fBSimilarity\fP Matrix 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIMatrix\fP map 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Don't have 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file RelationSDN.cpp.
+.PP
+References SimilarityMatrix::setMatrix().
+.PP
+Referenced by DataSet::addNewRelationSDN().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MOCLE from the source code.

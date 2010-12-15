@@ -1,0 +1,68 @@
+\hypertarget{classSilhouette}{
+\section{Silhouette Class Reference}
+\label{classSilhouette}\index{Silhouette@{Silhouette}}
+}
+
+
+{\ttfamily \#include $<$Silhouette.h$>$}Inheritance diagram for Silhouette::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classSilhouette}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \hyperlink{classSilhouette_af8817c1accb7b60814cfff988c9ccc05}{calculate} (\hyperlink{classPartition}{Partition} $\ast$pAPartition, \hyperlink{classRelationSDN}{RelationSDN} $\ast$pARelation, \hyperlink{classDataSet}{DataSet} $\ast$pADataset)
+\item 
+virtual double \hyperlink{classSilhouette_aaf47b647b2409999209c58316ab8e980}{calculate} (\hyperlink{classPartition}{Partition} \&objPartition1, \hyperlink{classPartition}{Partition} \&objPartition2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Gustavo Rodrigues 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+22/03/10 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.0 
+\end{DoxyVersion}
+
+
+Definition at line 22 of file Silhouette.h.
+
+\subsection{Member Function Documentation}
+\hypertarget{classSilhouette_aaf47b647b2409999209c58316ab8e980}{
+\index{Silhouette@{Silhouette}!calculate@{calculate}}
+\index{calculate@{calculate}!Silhouette@{Silhouette}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette::calculate ({\bf Partition} \& {\em objPartition1}, \/  {\bf Partition} \& {\em objPartition2})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classSilhouette_aaf47b647b2409999209c58316ab8e980}
+Does nothing 
+
+Implements \hyperlink{classValidationIndex_a8b688d8d53fbdacec393730fe2bab614}{ValidationIndex}.
+
+Definition at line 205 of file Silhouette.cpp.\hypertarget{classSilhouette_af8817c1accb7b60814cfff988c9ccc05}{
+\index{Silhouette@{Silhouette}!calculate@{calculate}}
+\index{calculate@{calculate}!Silhouette@{Silhouette}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette::calculate ({\bf Partition} $\ast$ {\em pAPartition}, \/  {\bf RelationSDN} $\ast$ {\em pARelation}, \/  {\bf DataSet} $\ast$ {\em pADataset})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classSilhouette_af8817c1accb7b60814cfff988c9ccc05}
+Return value of silhouette from parameter partition 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classPartition}{Partition},\hyperlink{classRelationSDN}{RelationSDN}}]and \hyperlink{classDataSet}{DataSet} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value silhouette 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classValidationIndex_a26fe1244f3313bd7f557149f6846fe01}{ValidationIndex}.
+
+Definition at line 18 of file Silhouette.cpp.
+
+References Similarity::calculate(), DataSet::getMapVector(), Partition::getObjectsInCluster(), RelationSDN::getSimilarity(), and Partition::getVectorObjCluster().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ValidationIndex/Silhouette.h\item 
+ValidationIndex/Silhouette.cpp\end{DoxyCompactItemize}

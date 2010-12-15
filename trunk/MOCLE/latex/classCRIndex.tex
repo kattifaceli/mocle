@@ -1,0 +1,63 @@
+\hypertarget{classCRIndex}{
+\section{CRIndex Class Reference}
+\label{classCRIndex}\index{CRIndex@{CRIndex}}
+}
+Inheritance diagram for CRIndex::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCRIndex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \hyperlink{classCRIndex_acfcf9186a522c78d67cc977aeddaf193}{calculate} (\hyperlink{classPartition}{Partition} \&objPartition1, \hyperlink{classPartition}{Partition} \&objPartition2)
+\item 
+virtual double \hyperlink{classCRIndex_a384b9fc6a5d271c13f7b599f17771041}{calculate} (\hyperlink{classPartition}{Partition} $\ast$pPartition, \hyperlink{classRelationSDN}{RelationSDN} $\ast$pRelation, \hyperlink{classDataSet}{DataSet} $\ast$pDataset)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file CRIndex.h.
+
+\subsection{Member Function Documentation}
+\hypertarget{classCRIndex_a384b9fc6a5d271c13f7b599f17771041}{
+\index{CRIndex@{CRIndex}!calculate@{calculate}}
+\index{calculate@{calculate}!CRIndex@{CRIndex}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}double CRIndex::calculate ({\bf Partition} $\ast$ {\em pAPartition}, \/  {\bf RelationSDN} $\ast$ {\em pARelation}, \/  {\bf DataSet} $\ast$ {\em pDataSet})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classCRIndex_a384b9fc6a5d271c13f7b599f17771041}
+Method virtual from return value of measure validation internal 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classPartition}{Partition},\hyperlink{classRelationSDN}{RelationSDN}}]and \hyperlink{classDataSet}{DataSet} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value from measure validation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classValidationIndex_a26fe1244f3313bd7f557149f6846fe01}{ValidationIndex}.
+
+Definition at line 87 of file CRIndex.cpp.\hypertarget{classCRIndex_acfcf9186a522c78d67cc977aeddaf193}{
+\index{CRIndex@{CRIndex}!calculate@{calculate}}
+\index{calculate@{calculate}!CRIndex@{CRIndex}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}double CRIndex::calculate ({\bf Partition} \& {\em objPartition1}, \/  {\bf Partition} \& {\em objPartition2})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classCRIndex_acfcf9186a522c78d67cc977aeddaf193}
+Method virtual from return value of measure validation external 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classPartition}{Partition}}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value from measure validation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classValidationIndex_a8b688d8d53fbdacec393730fe2bab614}{ValidationIndex}.
+
+Definition at line 11 of file CRIndex.cpp.
+
+References Partition::getCluster(), Partition::getNumClusters(), and Partition::getNumObjects().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ValidationIndex/CRIndex.h\item 
+ValidationIndex/CRIndex.cpp\end{DoxyCompactItemize}

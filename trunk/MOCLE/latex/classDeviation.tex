@@ -1,0 +1,85 @@
+\hypertarget{classDeviation}{
+\section{Deviation Class Reference}
+\label{classDeviation}\index{Deviation@{Deviation}}
+}
+
+
+{\ttfamily \#include $<$Deviation.h$>$}Inheritance diagram for Deviation::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classDeviation}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDeviation_ac6a194e1389f1b31ab8b80b80cb6e74e}{Deviation} ()
+\item 
+virtual double \hyperlink{classDeviation_aefedb81474f0d06827a2ceaecd93f43c}{calculate} (\hyperlink{classPartition}{Partition} $\ast$pAPartition, \hyperlink{classRelationSDN}{RelationSDN} $\ast$pARelation, \hyperlink{classDataSet}{DataSet} $\ast$pDataSet)
+\item 
+virtual double \hyperlink{classDeviation_af722cf601ea21cc689a77c1de470bcb5}{calculate} (\hyperlink{classPartition}{Partition} \&objPartition1, \hyperlink{classPartition}{Partition} \&objPartition2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Gustavo Rodrigues 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+12/03/10 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.0 
+\end{DoxyVersion}
+
+
+Definition at line 25 of file Deviation.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDeviation_ac6a194e1389f1b31ab8b80b80cb6e74e}{
+\index{Deviation@{Deviation}!Deviation@{Deviation}}
+\index{Deviation@{Deviation}!Deviation@{Deviation}}
+\subsubsection[{Deviation}]{\setlength{\rightskip}{0pt plus 5cm}Deviation::Deviation ()}}
+\label{classDeviation_ac6a194e1389f1b31ab8b80b80cb6e74e}
+Does nothing 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have any parameter \end{DoxyParams}
+
+
+Definition at line 11 of file Deviation.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{classDeviation_af722cf601ea21cc689a77c1de470bcb5}{
+\index{Deviation@{Deviation}!calculate@{calculate}}
+\index{calculate@{calculate}!Deviation@{Deviation}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}double Deviation::calculate ({\bf Partition} \& {\em objPartition1}, \/  {\bf Partition} \& {\em objPartition2})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classDeviation_af722cf601ea21cc689a77c1de470bcb5}
+Does nothing 
+
+Implements \hyperlink{classValidationIndex_a8b688d8d53fbdacec393730fe2bab614}{ValidationIndex}.
+
+Definition at line 40 of file Deviation.cpp.\hypertarget{classDeviation_aefedb81474f0d06827a2ceaecd93f43c}{
+\index{Deviation@{Deviation}!calculate@{calculate}}
+\index{calculate@{calculate}!Deviation@{Deviation}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}double Deviation::calculate ({\bf Partition} $\ast$ {\em pAPartition}, \/  {\bf RelationSDN} $\ast$ {\em pARelation}, \/  {\bf DataSet} $\ast$ {\em pDataSet})\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classDeviation_aefedb81474f0d06827a2ceaecd93f43c}
+Return value of deviation from parameter partition 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classPartition}{Partition},\hyperlink{classRelationSDN}{RelationSDN}}]and \hyperlink{classDataSet}{DataSet} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value deviation 
+\end{DoxyReturn}
+
+
+calculate the summed distances for each pattern of a cluster 
+
+Implements \hyperlink{classValidationIndex_a26fe1244f3313bd7f557149f6846fe01}{ValidationIndex}.
+
+Definition at line 15 of file Deviation.cpp.
+
+References Similarity::calculate(), Partition::getCentroidInCluster(), DataSet::getMapVector(), Partition::getObjectsInCluster(), RelationSDN::getSimilarity(), and Partition::getVectorObjCluster().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ValidationIndex/Deviation.h\item 
+ValidationIndex/Deviation.cpp\end{DoxyCompactItemize}

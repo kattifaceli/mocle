@@ -1,0 +1,52 @@
+\hypertarget{classSimilarity}{
+\section{Similarity Class Reference}
+\label{classSimilarity}\index{Similarity@{Similarity}}
+}
+
+
+Responsible by management the measures of similarity.  
+
+
+{\ttfamily \#include $<$Similarity.h$>$}Inheritance diagram for Similarity::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classSimilarity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \hyperlink{classSimilarity_a3ff3d3622d8a45b15531bc143308b2ae}{calculate} (const vector$<$ double $>$ \&vectorPattern\_\-1, const vector$<$ double $>$ \&vectorPattern\_\-2)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Responsible by management the measures of similarity. \begin{DoxyAuthor}{Author}
+Valter Henrique 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+01/02/10 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.0 Responsible by management the measures of similarity, for example: Eucleadean Distance and Correlation \hyperlink{classPearson}{Pearson} 
+\end{DoxyVersion}
+
+
+Definition at line 25 of file Similarity.h.
+
+\subsection{Member Function Documentation}
+\hypertarget{classSimilarity_a3ff3d3622d8a45b15531bc143308b2ae}{
+\index{Similarity@{Similarity}!calculate@{calculate}}
+\index{calculate@{calculate}!Similarity@{Similarity}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Similarity::calculate (const vector$<$ double $>$ \& {\em vectorPattern\_\-1}, \/  const vector$<$ double $>$ \& {\em vectorPattern\_\-2})\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classSimilarity_a3ff3d3622d8a45b15531bc143308b2ae}
+Each similarity class has the method 'calculate' that calculates the measures of similarity especific to that purpose 
+
+Implemented in \hyperlink{classEuclidean_a732c1c959cc6978d4e9050bc42fda186}{Euclidean}, and \hyperlink{classPearson_a71d128fcaecda770e5b36494a916252f}{Pearson}.
+
+Referenced by Silhouette::calculate(), Deviation::calculate(), and DataSet::generateMatrix().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Similarity.h\item 
+Similarity.cpp\end{DoxyCompactItemize}

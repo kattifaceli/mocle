@@ -1,0 +1,217 @@
+\hypertarget{classDataSet}{
+\section{DataSet Class Reference}
+\label{classDataSet}\index{DataSet@{DataSet}}
+}
+
+
+Responsible to manage the dataset file into the memory.  
+
+
+{\ttfamily \#include $<$DataSet.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDataSet_ac9b99505bafd5b1cccf8a361c3ac84a7}{DataSet} ()
+\item 
+\hyperlink{classDataSet_a46b0b094bd833ace0a8f69fc74fadf18}{DataSet} (string sPathADataSet, string sANameDataSet)
+\item 
+map$<$ string, map$<$ string, double $>$ $>$ \hyperlink{classDataSet_a17c8ba146ec31cd291ded2be3f8833d5}{generateMatrix} (\hyperlink{classSimilarity}{Similarity} $\ast$pAObSimilarity)
+\item 
+void \hyperlink{classDataSet_a8a5fa42fd383c845b2896fd7f3e4cce4}{tabulateMappingDataSet} ()
+\item 
+int \hyperlink{classDataSet_af747c49a69d26123a80a2da14eb40e13}{getNumberOfFeature} ()
+\item 
+int \hyperlink{classDataSet_ad871938d36c8988a8e921788cd0019f7}{getNumberOfObjects} ()
+\item 
+\hypertarget{classDataSet_a83456254b8ff38c9711d2b50383aa48e}{
+string {\bfseries getNameDataSet} ()}
+\label{classDataSet_a83456254b8ff38c9711d2b50383aa48e}
+
+\item 
+map$<$ string, vector$<$ double $>$ $>$ \hyperlink{classDataSet_ab143b593863e69f9fb13383b2917f6f5}{getMapVector} ()
+\item 
+\hypertarget{classDataSet_a62ad7281541ee669a1318883eb4e9aa7}{
+fs::path {\bfseries getPathToDataSet} ()}
+\label{classDataSet_a62ad7281541ee669a1318883eb4e9aa7}
+
+\item 
+vector$<$ string $>$ \hyperlink{classDataSet_aaa850e86d8c43a4209cc83cf5354822f}{getVElements} ()
+\item 
+\hyperlink{classRelationSDN}{RelationSDN} $\ast$ \hyperlink{classDataSet_a0f0dc6d4ebc1b45cce29c2bc3bbc0a75}{getRelation} (int iAPosRelation)
+\item 
+void \hyperlink{classDataSet_a88e3f1f9e32bd459356869c3f13401fc}{addNewRelationSDN} (\hyperlink{classSimilarity}{Similarity} $\ast$pAObSimilarity)
+\item 
+void \hyperlink{classDataSet_a13b30783d97d4ea7469988979afe457f}{setNameDataSet} (string sANameDataSet)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDataSet_a4fa34425222deba63a72e973ab3b445c}{
+vector$<$ \hyperlink{classSimilarity}{Similarity} $\ast$ $>$ {\bfseries vectorObSimilarity}}
+\label{classDataSet_a4fa34425222deba63a72e973ab3b445c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Responsible to manage the dataset file into the memory. \begin{DoxyAuthor}{Author}
+Valter Henrique, Gustavo Henrique 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+01/02/10 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.0 Dataset class is responsible to inform the data to MOCLE 
+\end{DoxyVersion}
+
+
+Definition at line 40 of file DataSet.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDataSet_ac9b99505bafd5b1cccf8a361c3ac84a7}{
+\index{DataSet@{DataSet}!DataSet@{DataSet}}
+\index{DataSet@{DataSet}!DataSet@{DataSet}}
+\subsubsection[{DataSet}]{\setlength{\rightskip}{0pt plus 5cm}DataSet::DataSet ()}}
+\label{classDataSet_ac9b99505bafd5b1cccf8a361c3ac84a7}
+Does nothing 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have any parameter \end{DoxyParams}
+\hypertarget{classDataSet_a46b0b094bd833ace0a8f69fc74fadf18}{
+\index{DataSet@{DataSet}!DataSet@{DataSet}}
+\index{DataSet@{DataSet}!DataSet@{DataSet}}
+\subsubsection[{DataSet}]{\setlength{\rightskip}{0pt plus 5cm}DataSet::DataSet (string {\em sPathADataSet}, \/  string {\em sANameDataSet})}}
+\label{classDataSet_a46b0b094bd833ace0a8f69fc74fadf18}
+Ask to the user what kind format is the dataset then choose a specific method to pass the dataset to memory of the computer 
+\begin{DoxyParams}{Parameters}
+\item[{\em the}]path to the dataset in the computer \end{DoxyParams}
+
+
+Definition at line 10 of file DataSet.cpp.
+
+References tabulateMappingDataSet().
+
+\subsection{Member Function Documentation}
+\hypertarget{classDataSet_a88e3f1f9e32bd459356869c3f13401fc}{
+\index{DataSet@{DataSet}!addNewRelationSDN@{addNewRelationSDN}}
+\index{addNewRelationSDN@{addNewRelationSDN}!DataSet@{DataSet}}
+\subsubsection[{addNewRelationSDN}]{\setlength{\rightskip}{0pt plus 5cm}void DataSet::addNewRelationSDN ({\bf Similarity} $\ast$ {\em pAObSimilarity})}}
+\label{classDataSet_a88e3f1f9e32bd459356869c3f13401fc}
+Add new object \hyperlink{classRelationSDN}{RelationSDN} in vectorRelations vector 
+\begin{DoxyParams}{Parameters}
+\item[{\em Object}]similarity \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file DataSet.cpp.
+
+References generateMatrix(), RelationSDN::setNnList(), RelationSDN::setSimilarity(), and RelationSDN::setSimilarityMatrix().\hypertarget{classDataSet_a17c8ba146ec31cd291ded2be3f8833d5}{
+\index{DataSet@{DataSet}!generateMatrix@{generateMatrix}}
+\index{generateMatrix@{generateMatrix}!DataSet@{DataSet}}
+\subsubsection[{generateMatrix}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ string, map$<$ string, double $>$ $>$ DataSet::generateMatrix ({\bf Similarity} $\ast$ {\em pAObSimilarity})}}
+\label{classDataSet_a17c8ba146ec31cd291ded2be3f8833d5}
+Generate the Distance matrix get in the dataset file to the memory 
+\begin{DoxyParams}{Parameters}
+\item[{\em Object}]similarity \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Matrix map 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file DataSet.cpp.
+
+References Similarity::calculate().
+
+Referenced by addNewRelationSDN().\hypertarget{classDataSet_ab143b593863e69f9fb13383b2917f6f5}{
+\index{DataSet@{DataSet}!getMapVector@{getMapVector}}
+\index{getMapVector@{getMapVector}!DataSet@{DataSet}}
+\subsubsection[{getMapVector}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ string, vector$<$ double $>$ $>$ DataSet::getMapVector ()}}
+\label{classDataSet_ab143b593863e69f9fb13383b2917f6f5}
+Returns the dataset mapped int th struct \begin{DoxyReturn}{Returns}
+pathToDataSet 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file DataSet.cpp.
+
+Referenced by Silhouette::calculate(), and Deviation::calculate().\hypertarget{classDataSet_af747c49a69d26123a80a2da14eb40e13}{
+\index{DataSet@{DataSet}!getNumberOfFeature@{getNumberOfFeature}}
+\index{getNumberOfFeature@{getNumberOfFeature}!DataSet@{DataSet}}
+\subsubsection[{getNumberOfFeature}]{\setlength{\rightskip}{0pt plus 5cm}int DataSet::getNumberOfFeature ()}}
+\label{classDataSet_af747c49a69d26123a80a2da14eb40e13}
+Returns the number of features existing in dataset \begin{DoxyReturn}{Returns}
+iNumFeatures 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file DataSet.cpp.\hypertarget{classDataSet_ad871938d36c8988a8e921788cd0019f7}{
+\index{DataSet@{DataSet}!getNumberOfObjects@{getNumberOfObjects}}
+\index{getNumberOfObjects@{getNumberOfObjects}!DataSet@{DataSet}}
+\subsubsection[{getNumberOfObjects}]{\setlength{\rightskip}{0pt plus 5cm}int DataSet::getNumberOfObjects ()}}
+\label{classDataSet_ad871938d36c8988a8e921788cd0019f7}
+Returns the number of objects existing in dataset \begin{DoxyReturn}{Returns}
+iNumFeatures 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file DataSet.cpp.
+
+Referenced by Connectivity::calculate(), and Partition::generateRandomPartition().\hypertarget{classDataSet_a0f0dc6d4ebc1b45cce29c2bc3bbc0a75}{
+\index{DataSet@{DataSet}!getRelation@{getRelation}}
+\index{getRelation@{getRelation}!DataSet@{DataSet}}
+\subsubsection[{getRelation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RelationSDN} $\ast$ DataSet::getRelation (int {\em iAPosRelation})}}
+\label{classDataSet_a0f0dc6d4ebc1b45cce29c2bc3bbc0a75}
+Return pointer for vector \hyperlink{classRelationSDN}{RelationSDN} 
+\begin{DoxyParams}{Parameters}
+\item[{\em Position}]of vector \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RelationSDN$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file DataSet.cpp.\hypertarget{classDataSet_aaa850e86d8c43a4209cc83cf5354822f}{
+\index{DataSet@{DataSet}!getVElements@{getVElements}}
+\index{getVElements@{getVElements}!DataSet@{DataSet}}
+\subsubsection[{getVElements}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ DataSet::getVElements ()}}
+\label{classDataSet_aaa850e86d8c43a4209cc83cf5354822f}
+Return vector of all objects from dataset 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file DataSet.cpp.
+
+Referenced by Connectivity::calculate().\hypertarget{classDataSet_a13b30783d97d4ea7469988979afe457f}{
+\index{DataSet@{DataSet}!setNameDataSet@{setNameDataSet}}
+\index{setNameDataSet@{setNameDataSet}!DataSet@{DataSet}}
+\subsubsection[{setNameDataSet}]{\setlength{\rightskip}{0pt plus 5cm}void DataSet::setNameDataSet (string {\em sANameDataSet})}}
+\label{classDataSet_a13b30783d97d4ea7469988979afe457f}
+Set the name of the dataset file 
+\begin{DoxyParams}{Parameters}
+\item[{\em String}]sANameDataset \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file DataSet.cpp.\hypertarget{classDataSet_a8a5fa42fd383c845b2896fd7f3e4cce4}{
+\index{DataSet@{DataSet}!tabulateMappingDataSet@{tabulateMappingDataSet}}
+\index{tabulateMappingDataSet@{tabulateMappingDataSet}!DataSet@{DataSet}}
+\subsubsection[{tabulateMappingDataSet}]{\setlength{\rightskip}{0pt plus 5cm}void DataSet::tabulateMappingDataSet ()}}
+\label{classDataSet_a8a5fa42fd383c845b2896fd7f3e4cce4}
+Read the file passed in the argument pathADatSet and allocate in the memory 
+\begin{DoxyParams}{Parameters}
+\item[{\em pathADataSet}]receive the path from the dataset \end{DoxyParams}
+
+
+Definition at line 77 of file DataSet.cpp.
+
+Referenced by DataSet().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+DataSet.h\item 
+DataSet.cpp\end{DoxyCompactItemize}

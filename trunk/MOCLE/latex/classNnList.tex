@@ -1,0 +1,96 @@
+\hypertarget{classNnList}{
+\section{NnList Class Reference}
+\label{classNnList}\index{NnList@{NnList}}
+}
+
+
+{\ttfamily \#include $<$NnList.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNnList_a097872210a6db528bced6469fd5808b4}{NnList} ()
+\item 
+void \hyperlink{classNnList_ac60d0c4364b888199e2629b375ca1620}{setNnList} (map$<$ string, map$<$ string, double $>$ $>$ mapAObMap)
+\item 
+vector$<$ pair$<$ string, vector$<$ string $>$ $>$ $>$ \hyperlink{classNnList_a1df89c57cd15312fe45435958df139ab}{getNnList} ()
+\item 
+vector$<$ string $>$ \hyperlink{classNnList_a7803fc91bfd3771b7e5b9b9806478dba}{getNnList} (string sRotuloObject)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Gustavo Rodrigues 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+12/03/10 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.0 This class stores the nearest neighbors of all objects in the dataset according to similarity and distance matrix of similarity 
+\end{DoxyVersion}
+
+
+Definition at line 26 of file NnList.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNnList_a097872210a6db528bced6469fd5808b4}{
+\index{NnList@{NnList}!NnList@{NnList}}
+\index{NnList@{NnList}!NnList@{NnList}}
+\subsubsection[{NnList}]{\setlength{\rightskip}{0pt plus 5cm}NnList::NnList ()}}
+\label{classNnList_a097872210a6db528bced6469fd5808b4}
+Does nothing 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have any parameter \end{DoxyParams}
+
+
+Definition at line 10 of file NnList.cpp.
+
+\subsection{Member Function Documentation}
+\hypertarget{classNnList_a7803fc91bfd3771b7e5b9b9806478dba}{
+\index{NnList@{NnList}!getNnList@{getNnList}}
+\index{getNnList@{getNnList}!NnList@{NnList}}
+\subsubsection[{getNnList}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ NnList::getNnList (string {\em sRotuloObject})}}
+\label{classNnList_a7803fc91bfd3771b7e5b9b9806478dba}
+Return the nearest neighbor list of object sRotuloOBject 
+\begin{DoxyParams}{Parameters}
+\item[{\em Rotulo}]of object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nearest neighbor list 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file NnList.cpp.\hypertarget{classNnList_a1df89c57cd15312fe45435958df139ab}{
+\index{NnList@{NnList}!getNnList@{getNnList}}
+\index{getNnList@{getNnList}!NnList@{NnList}}
+\subsubsection[{getNnList}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ string, vector$<$ string $>$ $>$ $>$ NnList::getNnList ()}}
+\label{classNnList_a1df89c57cd15312fe45435958df139ab}
+Return the nearest neighbor list 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nearest neighbor list 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file NnList.cpp.
+
+Referenced by Connectivity::calculate().\hypertarget{classNnList_ac60d0c4364b888199e2629b375ca1620}{
+\index{NnList@{NnList}!setNnList@{setNnList}}
+\index{setNnList@{setNnList}!NnList@{NnList}}
+\subsubsection[{setNnList}]{\setlength{\rightskip}{0pt plus 5cm}void NnList::setNnList (map$<$ string, map$<$ string, double $>$ $>$ {\em mapAObMap})}}
+\label{classNnList_ac60d0c4364b888199e2629b375ca1620}
+Set entire nearest neighbor list from dataset 
+\begin{DoxyParams}{Parameters}
+\item[{\em Matrix}]map \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file NnList.cpp.
+
+Referenced by RelationSDN::setNnList().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+NnList.h\item 
+NnList.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,141 @@
+\hypertarget{classRelationSDN}{
+\section{RelationSDN Class Reference}
+\label{classRelationSDN}\index{RelationSDN@{RelationSDN}}
+}
+
+
+{\ttfamily \#include $<$RelationSDN.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classRelationSDN_abc9dd5e8a1441965db4fe7d964ad9296}{
+{\bfseries RelationSDN} (\hyperlink{classSimilarityMatrix}{SimilarityMatrix} objASimilarityMatrix, \hyperlink{classNnList}{NnList} objANnList, \hyperlink{classSimilarity}{Similarity} $\ast$pAObjSimilarity)}
+\label{classRelationSDN_abc9dd5e8a1441965db4fe7d964ad9296}
+
+\item 
+\hyperlink{classSimilarityMatrix}{SimilarityMatrix} \hyperlink{classRelationSDN_a52f3944e7966f4ea3684069fff04e1a3}{getSimilarityMatrix} ()
+\item 
+\hyperlink{classSimilarity}{Similarity} $\ast$ \hyperlink{classRelationSDN_a8db644a112eae5dd35c2ca0e47d36ce1}{getSimilarity} ()
+\item 
+\hyperlink{classNnList}{NnList} \hyperlink{classRelationSDN_a7d4ae265a19587306975a8cdac7bb115}{getNnList} ()
+\item 
+void \hyperlink{classRelationSDN_a3a8936efd1fd9ae0736a4a5e360b34e6}{setSimilarityMatrix} (map$<$ string, map$<$ string, double $>$ $>$ mapObjMap)
+\item 
+void \hyperlink{classRelationSDN_ad16b958a06717abf76ff5a96d008534c}{setSimilarity} (\hyperlink{classSimilarity}{Similarity} $\ast$pObjSimilarity)
+\item 
+void \hyperlink{classRelationSDN_a403418b3fb4ec2be68f91d8b47428885}{setNnList} (map$<$ string, map$<$ string, double $>$ $>$ mapObjMap)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Gustavo Rodrigues 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+12/03/10 
+\end{DoxySince}
+\begin{DoxyVersion}{Version}
+2.0 This class stores an object in which the similarity is generated from this similarity matrix and is created from the list of nearest neighbors. 
+\end{DoxyVersion}
+
+
+Definition at line 23 of file RelationSDN.h.
+
+\subsection{Member Function Documentation}
+\hypertarget{classRelationSDN_a7d4ae265a19587306975a8cdac7bb115}{
+\index{RelationSDN@{RelationSDN}!getNnList@{getNnList}}
+\index{getNnList@{getNnList}!RelationSDN@{RelationSDN}}
+\subsubsection[{getNnList}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NnList} RelationSDN::getNnList ()}}
+\label{classRelationSDN_a7d4ae265a19587306975a8cdac7bb115}
+Return nearest neighbor list 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object \hyperlink{classNnList}{NnList} 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file RelationSDN.cpp.
+
+Referenced by Connectivity::calculate().\hypertarget{classRelationSDN_a8db644a112eae5dd35c2ca0e47d36ce1}{
+\index{RelationSDN@{RelationSDN}!getSimilarity@{getSimilarity}}
+\index{getSimilarity@{getSimilarity}!RelationSDN@{RelationSDN}}
+\subsubsection[{getSimilarity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Similarity} $\ast$ RelationSDN::getSimilarity ()}}
+\label{classRelationSDN_a8db644a112eae5dd35c2ca0e47d36ce1}
+Return pointer measure similarity 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer \hyperlink{classSimilarity}{Similarity} 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file RelationSDN.cpp.
+
+Referenced by Silhouette::calculate(), and Deviation::calculate().\hypertarget{classRelationSDN_a52f3944e7966f4ea3684069fff04e1a3}{
+\index{RelationSDN@{RelationSDN}!getSimilarityMatrix@{getSimilarityMatrix}}
+\index{getSimilarityMatrix@{getSimilarityMatrix}!RelationSDN@{RelationSDN}}
+\subsubsection[{getSimilarityMatrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SimilarityMatrix} RelationSDN::getSimilarityMatrix ()}}
+\label{classRelationSDN_a52f3944e7966f4ea3684069fff04e1a3}
+Return object similarity Matrix 
+\begin{DoxyParams}{Parameters}
+\item[{\em Don't}]have \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classSimilarity}{Similarity} Matrix 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file RelationSDN.cpp.\hypertarget{classRelationSDN_a403418b3fb4ec2be68f91d8b47428885}{
+\index{RelationSDN@{RelationSDN}!setNnList@{setNnList}}
+\index{setNnList@{setNnList}!RelationSDN@{RelationSDN}}
+\subsubsection[{setNnList}]{\setlength{\rightskip}{0pt plus 5cm}void RelationSDN::setNnList (map$<$ string, map$<$ string, double $>$ $>$ {\em mapObjMap})}}
+\label{classRelationSDN_a403418b3fb4ec2be68f91d8b47428885}
+Set nearest neighbor list 
+\begin{DoxyParams}{Parameters}
+\item[{\em Matrix}]map \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file RelationSDN.cpp.
+
+References NnList::setNnList().
+
+Referenced by DataSet::addNewRelationSDN().\hypertarget{classRelationSDN_ad16b958a06717abf76ff5a96d008534c}{
+\index{RelationSDN@{RelationSDN}!setSimilarity@{setSimilarity}}
+\index{setSimilarity@{setSimilarity}!RelationSDN@{RelationSDN}}
+\subsubsection[{setSimilarity}]{\setlength{\rightskip}{0pt plus 5cm}void RelationSDN::setSimilarity ({\bf Similarity} $\ast$ {\em pObjSimilarity})}}
+\label{classRelationSDN_ad16b958a06717abf76ff5a96d008534c}
+Set measure similarity 
+\begin{DoxyParams}{Parameters}
+\item[{\em Pointer}]similarity \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file RelationSDN.cpp.
+
+Referenced by DataSet::addNewRelationSDN().\hypertarget{classRelationSDN_a3a8936efd1fd9ae0736a4a5e360b34e6}{
+\index{RelationSDN@{RelationSDN}!setSimilarityMatrix@{setSimilarityMatrix}}
+\index{setSimilarityMatrix@{setSimilarityMatrix}!RelationSDN@{RelationSDN}}
+\subsubsection[{setSimilarityMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void RelationSDN::setSimilarityMatrix (map$<$ string, map$<$ string, double $>$ $>$ {\em mapObjMap})}}
+\label{classRelationSDN_a3a8936efd1fd9ae0736a4a5e360b34e6}
+Set object \hyperlink{classSimilarity}{Similarity} Matrix 
+\begin{DoxyParams}{Parameters}
+\item[{\em Matrix}]map \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Don't have 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file RelationSDN.cpp.
+
+References SimilarityMatrix::setMatrix().
+
+Referenced by DataSet::addNewRelationSDN().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RelationSDN.h\item 
+RelationSDN.cpp\end{DoxyCompactItemize}

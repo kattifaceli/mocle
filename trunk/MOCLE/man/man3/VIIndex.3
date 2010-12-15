@@ -1,0 +1,82 @@
+.TH "VIIndex" 3 "27 Jul 2010" "Version version2.0" "MOCLE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VIIndex \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VIIndex.h>\fP
+.PP
+Inherits \fBInformationTheory\fP, and \fBValidationIndex\fP.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBcalculate\fP (\fBPartition\fP &objPartition1, \fBPartition\fP &objPartition2)"
+.br
+.ti -1c
+.RI "virtual double \fBcalculate\fP (\fBPartition\fP *pPartition, \fBRelationSDN\fP *pRelation, \fBDataSet\fP *pDataset)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBAuthor:\fP
+.RS 4
+Vinicius 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+??/\\?? 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+2.0 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file VIIndex.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "double VIIndex::calculate (\fBPartition\fP * pAPartition, \fBRelationSDN\fP * pARelation, \fBDataSet\fP * pDataSet)\fC [virtual]\fP"Method virtual from return value of measure validation internal 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBPartition\fP,\fBRelationSDN\fP\fP and \fBDataSet\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value from measure validation 
+.RE
+.PP
+
+.PP
+Implements \fBValidationIndex\fP.
+.PP
+Definition at line 15 of file VIIndex.cpp.
+.SS "double VIIndex::calculate (\fBPartition\fP & objPartition1, \fBPartition\fP & objPartition2)\fC [virtual]\fP"Method virtual from return value of measure validation external 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBPartition\fP\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value from measure validation 
+.RE
+.PP
+
+.PP
+Implements \fBValidationIndex\fP.
+.PP
+Definition at line 8 of file VIIndex.cpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MOCLE from the source code.
