@@ -86,25 +86,15 @@ private:
 	int iNumClusters; ///< the quantity of clustes existing in the partition
 	string sPathPartition; ///< the path to the partition
 	string sNamePartition; ///< the name of the partition
-	
+
 
 	map<string, int> mapObjects; ///< the key of the map (string) is the 'name' of the object and the value  (int) is the cluster that object belong */
 	vector<Cluster> vectorObjCluster; ///< a vector of Cluster's
 
 	fs::path pathPartition; ///< the path to the partition in the computer
 
-	typedef vector<Cluster>::iterator itCluster;
-
-	itCluster begin(){
-		return vectorObjCluster.begin();
-	}
-
-	itCluster end(){
-		return vectorObjCluster.end();
-	}
-
 public:
-
+	typedef vector<Cluster>::iterator itCluster;
 
 	/** Does nothing */
 	/** @param Don't have any parameter */
@@ -189,6 +179,14 @@ public:
 	/** @param Cluster Label */
 	/** @return vector<double> */
 	vector<double> getCentroidInCluster(int ClusterLabel);
+
+	itCluster begin(){
+		return vectorObjCluster.begin();
+	}
+
+	itCluster end(){
+		return vectorObjCluster.end();
+	}
 
 };
 

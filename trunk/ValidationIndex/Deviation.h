@@ -9,6 +9,8 @@
 #define DEVIATION_H_
 
 #include "../ValidationIndex.h"
+#include "../Partition.h"
+#include "../DataSet.h"
 
 using namespace std;
 

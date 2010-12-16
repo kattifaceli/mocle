@@ -46,28 +46,16 @@ private:
 	string sPathToDataSet;
 	string sNameDataSet; ///< the name of the dataset file
 
-	map<string, vector<double> > mapObjects; ///< all the values found in the archive of interest will be put in the memory for future process
-	vector <string> vectorElements; ///< receive just the index of the elements in the dataset file --- precisa mesmo disso? - katti
-
-
+	vector <string> vectorElements; ///< receive just the index of the elements in the dataset file
 	vector<RelationSDN*> vectorRelations;
-
-	typedef map<string, vector<double> >::iterator itDataSet;
-
-	typedef vector <double>::iterator itObject; // acrescentar - katti - colocar os typedefs como publicos
-
-// trecho a seguir pode tirar - katti
-	itDataSet begin(){
-		return mapObjects.begin();
-	}
-
-	itDataSet end(){
-		return mapObjects.end();
-	}
+	vector<Similarity *> vectorObSimilarity;
 
 public:
+	map<string, vector<double> > mapObjects; ///< all the values found in the archive of interest will be put in the memory for future process
 
-	vector<Similarity *> vectorObSimilarity; // não é publico - katti
+	typedef map<string, vector<double> >::iterator itDataSet;
+	typedef vector <double>::iterator itObject;
+	typedef vector <string>::iterator itElements;
 
 	/** Does nothing */
 	/** @param Don't have any parameter */
@@ -103,11 +91,6 @@ public:
 
 	fs::path getPathToDataSet();
 
-	/** Return vector of all objects from dataset */
-	/** @param Don't have  */
-	/** @return vector<string> */
-	vector <string> getVElements(); // não retornar o vetor de string - katti
-
 	/** Return pointer for vector RelationSDN*/
 	/** @param Position of vector  */
 	/** @return RelationSDN* */
@@ -122,6 +105,23 @@ public:
 	/** @param String sANameDataset */
 	/** @return Don't have */
 	void setNameDataSet(string sANameDataSet);
+
+	itDataSet getMapObjectsBegin(){
+		return mapObjects.begin();
+	}
+
+	itDataSet getMapObjectsEnd(){
+		return mapObjects.end();
+	}
+
+	itElements getVectorElementsBegin(){
+		return vectorElements.begin();
+	}
+
+	itElements getVectorElementsEnd(){
+		return vectorElements.end();
+	}
+
 
 };
 
