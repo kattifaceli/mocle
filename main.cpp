@@ -85,16 +85,12 @@ int main() {
 	string sPartition;
 
 	// user will define the partition that he want it to be processed by MOCLE
-	//	cout << "Inform the partition" << endl;
-	//	cout << ">> ";
-	//	cin >> sPartition;
 
 	// user will define the path to the partition
 	string sPathPartition = "/home/Valter/Eclipse/mocle/Partition/";
 
 	// # pode apagar a atribuição abaixo, sendo a mesma apenas para não ter repetição na entrada dos dados
 	sPartition = "simpsons.clu";
-	//sPathPartition += sPartition;
 
 	fs::path pathPartition(sPathPartition + sPartition);
 
@@ -109,10 +105,9 @@ int main() {
 		cout << "Number of objects in partition: " << pObjPartition->getNumObjects() << endl;
 		cout << "Number of clusters in partition: " << pObjPartition->getNumClusters() << endl;
 
-	//	pObjPartition->generateRandomPartition(pObjDataSet);
-	//	pObjPartition->generatePartitionGroupCluster(pObjDataSet);
-	//	pObjPartition->writePartition();
-	//	pObjPartition->calcCentroid(pObjDataSet);
+		//pObjPartition->generateRandomPartition(pObjDataSet);
+		//pObjPartition->generatePartitionGroupCluster(pObjDataSet);
+		//pObjPartition->writePartition();
 
 		pObjPartition->calculateCentroid(pObjDataSet);
 		
@@ -178,9 +173,9 @@ int main() {
 				NMIIndex obNMIIndex;
 
 				cout << endl << " -- Measures of external validation -- "<< endl << endl;
-				cout << "CRIndex: " << obCRIndex.calculate(objPartition1, objPartition2) << endl;
-				cout << "VIIndex: " << obVIIndex.calculate(objPartition1, objPartition2) << endl;
-				cout << "NMIIndex: " << obNMIIndex.calculate(objPartition1, objPartition2) << endl;
+				cout << "  CRIndex: " << obCRIndex.calculate(objPartition1, objPartition2) << endl;
+				cout << "  VIIndex: " << obVIIndex.calculate(objPartition1, objPartition2) << endl;
+				cout << "  NMIIndex: " << obNMIIndex.calculate(objPartition1, objPartition2) << endl;
 				cin.get();
 
 			}

@@ -14,18 +14,19 @@ Connectivity::Connectivity(float fASizeNn) {
 Connectivity::~Connectivity() {
 }
 
-double Connectivity::calculate(Partition *pAPartition, RelationSDN *pARelation,	DataSet *pADataSet) {
+double Connectivity::calculate(Partition *pAPartition, RelationSDN *pARelation,	DataSet *pDataSet) {
 
-	int iNPat = pADataSet->getNumberOfObjects();
+	int iNPat = pDataSet->getNumberOfObjects();
 	float fNn = ceil(iNPat * fSizeNn);
 	int iNNearestNeighbors = int(fNn);
 	double dSomaNN;
 	double conn = 0;
 
 	vector<string>::iterator itVectorElements;
+	vector<string> vectorElements = pDataSet->getVElements();
 
 	//Walk on all objects in dataset
-	for (itVectorElements = pADataSet->getVectorElementsBegin(); itVectorElements	!= pADataSet->getVectorElementsEnd(); itVectorElements++) {
+	for (itVectorElements = vectorElements.begin(); itVectorElements != vectorElements.end(); itVectorElements++) {
 
 		dSomaNN = 0;
 
@@ -36,7 +37,7 @@ double Connectivity::calculate(Partition *pAPartition, RelationSDN *pARelation,	
 			string sJNeighbors = vectorNnListOfVElement[j];
 
 			//if object itVectorElements and J-Nearest Neighbor don't have same cluster
-			if (pAPartition->getLabelClusterOf((*itVectorElements))	!= pAPartition->getLabelClusterOf(sJNeighbors)) {
+			if (pAPartition->getLabelClusterOf((*itVectorElements)) != pAPartition->getLabelClusterOf(sJNeighbors)) {
 				dSomaNN += 1.0 / (j + 1);
 			}
 		}
