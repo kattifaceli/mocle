@@ -16,6 +16,10 @@ DataSet::DataSet(string sPathADataSet, string sANameDataSet) {
 	// this field the user define the intern format from the dataset
 	// # estender para csv, excel, e outros tipos existentes
 
+	//	cout << "Inform the intern format from the dataset" << endl;
+	//	cout << ">> ";
+	//	cin >> sFormat;
+
 	// # aqui chamar o método que irá 'mapear' o dataset dependendo do formato interno fornecido pelo usuário
 	// # para não ter de ficar fornecendo em todo teste
 	sFormat = "tabulate";
@@ -24,6 +28,10 @@ DataSet::DataSet(string sPathADataSet, string sANameDataSet) {
 }
 
 DataSet::~DataSet() {}
+
+vector <string> DataSet::getVElements(){
+	return vectorElements;
+}
 
 RelationSDN* DataSet::getRelation(int iAPosRelation){
 	return vectorRelations[iAPosRelation];
@@ -73,7 +81,7 @@ void DataSet::tabulateMappingDataSet() {
 	double dNumber;	   // dNumber, in a double take itTokens from the file of interest
 
 
-	cout << "sPathDataSet >> " << sPathDataSet;
+	cout << "sPathDataSet >> " << sPathDataSet << endl;
 	ifstream in(sPathDataSet.c_str());
 
 	// taking the first line of file
@@ -131,5 +139,3 @@ void DataSet::setNameDataSet(string sANameDataSet){
 string DataSet::getNameDataSet(){
 	return sNameDataSet;
 }
-
-
