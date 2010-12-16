@@ -1,8 +1,7 @@
 /*
  * CRIndex.h
  *
- *  Created on: ??/??/2010
- *      Author: ???
+ *      Author: Vinicius
  */
 
 #ifndef __CR_INDEX_H__

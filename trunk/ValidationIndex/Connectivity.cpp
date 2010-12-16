@@ -36,8 +36,7 @@ double Connectivity::calculate(Partition *pAPartition, RelationSDN *pARelation,	
 			string sJNeighbors = vectorNnListOfVElement[j];
 
 			//if object itVectorElements and J-Nearest Neighbor don't have same cluster
-			if (pAPartition->getLabelClusterOf((*itVectorElements))
-					!= pAPartition->getLabelClusterOf(sJNeighbors)) {
+			if (pAPartition->getLabelClusterOf((*itVectorElements))	!= pAPartition->getLabelClusterOf(sJNeighbors)) {
 				dSomaNN += 1.0 / (j + 1);
 			}
 		}
