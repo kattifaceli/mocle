@@ -48,17 +48,11 @@ int main() {
 
 	string sDataSet;
 
-	// user will define the file (dataset) that will be processed by MOCLE
-	//	cout << "Inform the name of the dataset" << endl;
-	//	cout << ">> ";
-	//	cin >> sDataSet;
-
 	// # o usuário irá definir o dataset a ser processado pelo MOCLE
-	string sPathDataSet = "/home/Valter/Eclipse/MOCLE Project/Dataset";
+	string sPathDataSet = "/home/Valter/Eclipse/mocle/Dataset/";
 
 	// # apagar esta atribuição, e descomentar as acima, deixando assim apenas para não ter de digitar toda vez
 	sDataSet = "simpsons.txt";
-	//sPathDataSet += sDataSet;
 
 	// creating a path to the dataset
 	fs::path pathDataSet(sPathDataSet+sDataSet);
@@ -96,7 +90,7 @@ int main() {
 	//	cin >> sPartition;
 
 	// user will define the path to the partition
-	string sPathPartition = "/home/Valter/Eclipse/MOCLE Project/Partition";
+	string sPathPartition = "/home/Valter/Eclipse/mocle/Partition/";
 
 	// # pode apagar a atribuição abaixo, sendo a mesma apenas para não ter repetição na entrada dos dados
 	sPartition = "simpsons.clu";

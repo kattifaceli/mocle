@@ -19,23 +19,20 @@ double Deviation::calculate(Partition *pAPartition, RelationSDN *pARelation, Dat
     vector<string>::iterator itObjectsCluster;
 
     map<string, vector<double> >::iterator itMapVector;
-// colocar algo como:    itDataSet itMapVector; // - katti
 
-    map<string, vector<double> > mapVector = pADataset->getMapVector();
-	Similarity *similarity = pARelation->getSimilarity();
+	Similarity *pSimilarity = pARelation->getSimilarity();
 
 	//walk all cluster from partition
-// nesse for, usar o itCluster
-// for (itCluster it = pPartition.begin(); it != ....
-	for(int i = 0; i < (int)pAPartition->getVectorObjCluster().size(); i++){
+	int iSize = (int)pAPartition->getVectorObjCluster().size();
+	for(int i = 0; i < iSize ; i++){
 
 		vector<double> centroid = pAPartition->getCentroidInCluster((pAPartition->getVectorObjCluster()[i]).getLabel());
 		vector<string> objectsCluster = pAPartition->getObjectsInCluster( (pAPartition->getVectorObjCluster()[i]).getLabel());
 
 		/// calculate the summed distances for each pattern of a cluster
 	 	for(itObjectsCluster = objectsCluster.begin(); itObjectsCluster != objectsCluster.end(); itObjectsCluster++){
-			itMapVector = mapVector.find((*itObjectsCluster));
-			dDev += similarity->calculate(itMapVector->second, centroid);
+	 	    itMapVector = pADataset->mapObjects.find((*itObjectsCluster)); // # acessando diretamente a estrutura mapObjects da classe DataSet
+			dDev += pSimilarity->calculate(itMapVector->second, centroid);
 		}
 
 	}

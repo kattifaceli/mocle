@@ -14,26 +14,23 @@ Connectivity::Connectivity(float fASizeNn) {
 Connectivity::~Connectivity() {
 }
 
-double Connectivity::calculate(Partition *pAPartition, RelationSDN *pARelation,	DataSet *pDataSet) {
+double Connectivity::calculate(Partition *pAPartition, RelationSDN *pARelation,	DataSet *pADataSet) {
 
-	int iNPat = pDataSet->getNumberOfObjects();
+	int iNPat = pADataSet->getNumberOfObjects();
 	float fNn = ceil(iNPat * fSizeNn);
 	int iNNearestNeighbors = int(fNn);
 	double dSomaNN;
 	double conn = 0;
 
 	vector<string>::iterator itVectorElements;
-	vector<string> vectorElements = pDataSet->getVElements();
 
 	//Walk on all objects in dataset
-	for (itVectorElements = vectorElements.begin(); itVectorElements
-			!= vectorElements.end(); itVectorElements++) {
+	for (itVectorElements = pADataSet->getVectorElementsBegin(); itVectorElements	!= pADataSet->getVectorElementsEnd(); itVectorElements++) {
 
 		dSomaNN = 0;
 
 		//Find all nearest neighbors of itVectorElements
-		vector<string> vectorNnListOfVElement =
-				pARelation->getNnList().getNnList((*itVectorElements));
+		vector<string> vectorNnListOfVElement = pARelation->getNnList().getNnList((*itVectorElements));
 
 		for (int j = 0; j < iNNearestNeighbors; j++) {
 			string sJNeighbors = vectorNnListOfVElement[j];
