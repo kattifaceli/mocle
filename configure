@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rm -f exeMOCLE
+rm -f *~
+sleep 0.1
+
+clear
+g++ *.cpp *.h -lboost_filesystem -o execMOCLE
+./execMOCLE
+exit
