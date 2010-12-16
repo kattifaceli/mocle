@@ -1,8 +1,7 @@
 /*
  * CRIndex.cpp
  *
- *  Created on: ??/??/2010
- *      Author: ???
+ *      Author: Vinicius
  */
 
 #include "CRIndex.h"

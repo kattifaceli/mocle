@@ -23,8 +23,6 @@ double Silhouette::calculate(Partition *pAPartition, RelationSDN *pARelation, Da
 	vector<string>::iterator itVectorObjectsOnCluster;
 	map<string, vector<double> >::iterator itMapVector1;
 	map<string, vector<double> >::iterator itMapVector2;
-	map<string, vector<double> > mapVectorDataSet = pADataset->getMapVector();
-
 
 	//Inicialization of function a(xi)
 	//<Cluster Label, <Object, distance value from all objects of same cluster> >
@@ -39,7 +37,7 @@ double Silhouette::calculate(Partition *pAPartition, RelationSDN *pARelation, Da
 		//Walk each object of cluster
 		for(itVectorObjectsOnCluster = vObjects.begin(); itVectorObjectsOnCluster != vObjects.end(); itVectorObjectsOnCluster++){
 
-			itMapVector1 = mapVectorDataSet.find( (*itVectorObjectsOnCluster) ); //Find value attributes from objects of Cluster itMapObCluster
+			itMapVector1 = pADataset->mapObjects.find( (*itVectorObjectsOnCluster) ); //Find value attributes from objects of Cluster itMapObCluster
 
 			double result = 0;
 			vector<string>::iterator itVectorObjectsOnCluster2;
@@ -48,7 +46,7 @@ double Silhouette::calculate(Partition *pAPartition, RelationSDN *pARelation, Da
 			for(itVectorObjectsOnCluster2 = vObjects.begin(); itVectorObjectsOnCluster2 != vObjects.end(); itVectorObjectsOnCluster2++){
 
 				if( (*itVectorObjectsOnCluster2) != (*itVectorObjectsOnCluster) ){ //check if don't are same object
-					itMapVector2 = mapVectorDataSet.find( (*itVectorObjectsOnCluster2) ); //find value attributes from objects distinct of same Cluster
+					itMapVector2 = pADataset->mapObjects.find( (*itVectorObjectsOnCluster2) ); //find value attributes from objects distinct of same Cluster
 					result += pObjSimilarity->calculate(itMapVector1->second, itMapVector2->second);
 				}
 			}
@@ -79,7 +77,7 @@ double Silhouette::calculate(Partition *pAPartition, RelationSDN *pARelation, Da
 
 		//Walk each object of cluster itMapObCluster
 		for(itVectorObjectsOnCluster = vObjects.begin(); itVectorObjectsOnCluster != vObjects.end(); itVectorObjectsOnCluster++){
-			itMapVector1 = mapVectorDataSet.find( (*itVectorObjectsOnCluster) );
+			itMapVector1 = pADataset->mapObjects.find( (*itVectorObjectsOnCluster) );
 
 			double less, result = 0;
 			vector<string>::iterator itVectorObjectsOnCluster2;
@@ -94,7 +92,7 @@ double Silhouette::calculate(Partition *pAPartition, RelationSDN *pARelation, Da
 					//calculated distance from all objects other clusters
 					for(itVectorObjectsOnCluster2 = vObjects2.begin(); itVectorObjectsOnCluster2 != vObjects2.end(); itVectorObjectsOnCluster2++){
 
-						itMapVector2 = mapVectorDataSet.find( (*itVectorObjectsOnCluster2) );
+						itMapVector2 = pADataset->mapObjects.find( (*itVectorObjectsOnCluster2) );
 
 						if(itVectorObjectsOnCluster2 == vObjects2.begin()){ //first object from vObjects
 							less = pObjSimilarity->calculate(itMapVector1->second, itMapVector2->second);
