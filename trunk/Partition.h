@@ -39,8 +39,11 @@ private:
 		/** @param Don't have any parameter */
 		Cluster();
 
-		/// One constructor that will initialize the label in that the element
+		/// One constructor that will initialize the label
 		Cluster(int iACluster, string sAID);
+
+		/// One constructor that will initialize the label in that the element
+		Cluster(int iACluster);
 
 		/** Add the ID in the vector of ID */
 		/** @param  string sID */
@@ -79,6 +82,16 @@ private:
 		/** @return vector<double> */
 		vector<double> getVectorCentroids();
 
+		/** Set the vector centroid */
+		/** @param Vector centroid  */
+		/** @return None */
+		void setVectorCentroids(vector<double> *vectorCentroid);
+
+		/** Remove a object in cluster */
+		/** @param String object  */
+		/** @return None */
+		void removeObject(string sAObject);
+
 	};
 
 
@@ -99,6 +112,11 @@ public:
 	/** Does nothing */
 	/** @param Don't have any parameter */
 	Partition(string sAPathPartition, string sANamePartition);
+
+	/** Constructor the partition */
+	/** @param Partitions'name, number of clusters and number of features  */
+	Partition(string sANamePartition, int iANumberCluster, int iANumberOfFeatures);
+
 	virtual ~Partition();
 
 	/** Calculate the centroid of the cluster  */
@@ -179,6 +197,21 @@ public:
 	/** @param Cluster Label */
 	/** @return vector<double> */
 	vector<double> getCentroidInCluster(int ClusterLabel);
+
+	/** Returns the cluster's label which contain object*/
+	/** @param String object */
+	/** @return cluster's label */
+	int getLabelClusterObjet(string sAObject);
+
+	/** Change the cluster object */
+	/** @param Object and new cluster object */
+	/** @return Nothing */
+	void exchangeObject(string sAObject, int iAClusterObject);
+
+	/** Calculate the number of objects in partition*/
+	/** @param Nothing */
+	/** @return Nothing */
+	void calculateNumberOfObjectsPartition();
 
 	itCluster begin(){
 		return vectorObjCluster.begin();

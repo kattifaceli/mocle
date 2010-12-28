@@ -13,6 +13,18 @@ Partition::Partition(string sAPathPartition, string sANamePartition) {
 	loadPartition();
 }
 
+Partition::Partition(string sANamePartition, int iANumberOfClusters, int iANumberOfFeatures){
+	this->iNumClusters = iANumberOfClusters;
+	this->sNamePartition = sANamePartition;
+
+	for(int i = 0; i < iANumberOfClusters; i++){
+		vector<double> clusterCentroid (iANumberOfFeatures, 0);
+		Cluster *newCluster = new Cluster(i);
+		newCluster->setVectorCentroids(&clusterCentroid);
+		vectorObjCluster.push_back(*newCluster);
+	}
+}
+
 Partition::~Partition() {}
 
 void Partition::calculateCentroid(DataSet *pAObjDataSet) {
@@ -104,7 +116,7 @@ void Partition::showCentroids(){
 
 	for (int i = 0; i < iNumClusters; i++){
 
-		 vectorCentroid = vectorObjCluster[i].getVectorCentroids();
+		vectorCentroid = vectorObjCluster[i].getVectorCentroids();
 
 		for (itVectorCentroid = vectorCentroid.begin(); itVectorCentroid != vectorCentroid.end(); ++itVectorCentroid){
 			cout << "Cluster (" << i << ") | Centroid >> " << *itVectorCentroid << endl;
@@ -159,7 +171,18 @@ int Partition::getNumClusters() {
 }
 
 int Partition::getNumObjects() {
-	return iNumObjects;
+	return this->iNumObjects;
+}
+
+void Partition::calculateNumberOfObjectsPartition(){
+	Partition::itCluster itCluster;
+	int numberOfObjects = 0;
+
+	for(itCluster = this->begin(); itCluster != this->end(); itCluster++){
+		numberOfObjects += itCluster->getVectorObjects().size();
+	}
+
+	this->iNumObjects = numberOfObjects;
 }
 
 map<string, int> Partition::getMObjects(){
@@ -204,7 +227,7 @@ void Partition::generateRandomPartition(DataSet *pAObjDataSet) {
 		cout << ">> ";
 		cin >> iObjects;
 	}
-	*/
+	 */
 
 	while (iNumClusters <= 0){
 		cout << "Inform the number of CLUSTERS that you want in the new partition" << endl;
@@ -297,11 +320,51 @@ void Partition::printClusters(){
 
 }
 
+void Partition::exchangeObject(string sAObject, int iAClusterObject){
+	Partition::itCluster itCluster;
+	int notFind = 1;
+
+	for(itCluster = this->begin(); itCluster != this->end() && notFind; itCluster++){
+		vector<string> vectorObjectsCluster = itCluster->getVectorObjects();
+		vector<string>::iterator itVectorObjectsCluster = find(vectorObjectsCluster.begin(), vectorObjectsCluster.end(), sAObject);
+
+		if ( itVectorObjectsCluster != vectorObjectsCluster.end()){ //found in cluster itCluster
+			itCluster->removeObject(sAObject);
+			this->vectorObjCluster[iAClusterObject].addObject(sAObject);
+			notFind = 0;
+		}
+	}
+
+	if(notFind == 1){ //not find object in clusters
+		this->vectorObjCluster[iAClusterObject].addObject(sAObject);
+	}
+
+}
+
+int Partition::getLabelClusterObjet(string sAObject){
+	Partition::itCluster itCluster;
+
+	for(itCluster = this->begin(); itCluster != this->end(); itCluster++){
+		vector<string> vectorObjectsCluster = itCluster->getVectorObjects();
+		vector<string>::iterator itVectorObjectsCluster = find(vectorObjectsCluster.begin(), vectorObjectsCluster.end(), sAObject);
+
+		if ( itVectorObjectsCluster != vectorObjectsCluster.end()){
+			return itCluster->getLabel();
+		}
+	}
+
+	return -1;
+
+}
 /******************
 	Cluster
-******************/
+ ******************/
 
 Partition::Cluster::Cluster(){}
+
+Partition::Cluster::Cluster(int iACluster) {
+	iLabel = iACluster;
+}
 
 Partition::Cluster::Cluster(int iACluster, string sAID) {
 	iLabel = iACluster;
@@ -321,6 +384,7 @@ void Partition::Cluster::calculateCentroid(DataSet *pAObjDataSet) {
 	int iNumFeatures = pAObjDataSet->getNumberOfFeature();
 
 	vector<double> vectorAtributes;
+	vectorCentroid.clear();
 
 	// a mapVector that will receive the mapVector from DataSet
 	map<string, vector<double> > mapVector;
@@ -328,15 +392,20 @@ void Partition::Cluster::calculateCentroid(DataSet *pAObjDataSet) {
 
 	// analyzing all that are a feature and adding their respective values and dividing by the number of elements that are in the same cluster, and storing this value vector of centroids, which have the values of the centroids
 	for (int i = 0; i < iNumFeatures; i++) {
-		for (int j = 0; j < (int)vectorObjects.size(); j++) {
-			vectorAtributes = mapVector.find(vectorObjects.at(j))->second;
-			dSum += vectorAtributes.at(i);
+		if(vectorObjects.size() > 0){
+			for (int j = 0; j < (int)vectorObjects.size(); j++) {
+				vectorAtributes = mapVector.find(vectorObjects.at(j))->second;
+				dSum += vectorAtributes.at(i);
+			}
+			vectorCentroid.push_back(dSum / vectorObjects.size());
+		}else{
+			vectorCentroid.push_back(0);
 		}
-		vectorCentroid.push_back(dSum / vectorObjects.size());
 
 		// zeroing to sum the next feature
 		dSum = 0;
 	}
+
 }
 
 int Partition::Cluster::getLabel() {
@@ -357,4 +426,16 @@ vector<string>::iterator Partition::Cluster::objectsItBegin() {
 
 vector<string>::iterator Partition::Cluster::objectsItEnd() {
 	return vectorObjects.end();
+}
+
+void Partition::Cluster::setVectorCentroids(vector<double> *vectorCentroidP){
+	vectorCentroid = *vectorCentroidP;
+}
+
+void Partition::Cluster::removeObject(string sAObject){
+	vector<string>::iterator itVectorObjectsCluster = find(this->vectorObjects.begin(), this->vectorObjects.end(), sAObject);
+
+	if ( itVectorObjectsCluster != this->vectorObjects.end()){ //found
+		this->vectorObjects.erase(itVectorObjectsCluster);
+	}
 }
