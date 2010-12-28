@@ -5,6 +5,8 @@ rm -f *~
 sleep 0.1
 
 clear
-g++ *.cpp *.h -lboost_filesystem -o execMOCLE
+echo 'compilour'
+g++ *.cpp *.h -lboost_filesystem -lboost_system -o execMOCLE
+echo 'executar'
 ./execMOCLE
 exit

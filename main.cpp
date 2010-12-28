@@ -24,6 +24,20 @@
 #include "ValidationIndex/Silhouette.h"
 #include "ValidationIndex/VIIndex.h"
 
+/*Includes das chamadas dos algoritmos*/
+#include "ClusteringAlgorithms.h"
+#include "ClusteringAlgorithms/AverageLink.h"
+#include "ClusteringAlgorithms/CentroidLink.h"
+#include "ClusteringAlgorithms/CompleteLink.h"
+#include "ClusteringAlgorithms/KMeans.h"
+#include "ClusteringAlgorithms/SingleLink.h"
+
+#include "SettingsAlgorithm/SettingsAlgorithmAverageLink.h"
+#include "SettingsAlgorithm/SettingsAlgorithmCentroidLink.h"
+#include "SettingsAlgorithm/SettingsAlgorithmCompleteLink.h"
+#include "SettingsAlgorithm/SettingsAlgorithmKMeans.h"
+#include "SettingsAlgorithm/SettingsAlgorithmSingleLink.h"
+
 namespace fs = boost::filesystem;
 using namespace std;
 
@@ -49,7 +63,7 @@ int main() {
 	string sDataSet;
 
 	// # o usuário irá definir o dataset a ser processado pelo MOCLE
-	string sPathDataSet = "/home/Valter/Eclipse/mocle/Dataset/";
+	string sPathDataSet = "Dataset/";
 
 	// # apagar esta atribuição, e descomentar as acima, deixando assim apenas para não ter de digitar toda vez
 	sDataSet = "simpsons.txt";
@@ -87,7 +101,7 @@ int main() {
 	// user will define the partition that he want it to be processed by MOCLE
 
 	// user will define the path to the partition
-	string sPathPartition = "/home/Valter/Eclipse/mocle/Partition/";
+	string sPathPartition = "Partition/";
 
 	// # pode apagar a atribuição abaixo, sendo a mesma apenas para não ter repetição na entrada dos dados
 	sPartition = "simpsons.clu";
@@ -176,14 +190,38 @@ int main() {
 				cout << "  CRIndex: " << obCRIndex.calculate(objPartition1, objPartition2) << endl;
 				cout << "  VIIndex: " << obVIIndex.calculate(objPartition1, objPartition2) << endl;
 				cout << "  NMIIndex: " << obNMIIndex.calculate(objPartition1, objPartition2) << endl;
-				cin.get();
-
 			}
 		}
 
 	} else
 		cout << "The informed path to the PARTITION don't exist " << endl << "Please, check the partion path." << endl;
 
+
+	/*Testes dos algoritmos*/
+	ClusteringAlgorithms *averageLink = new AverageLink();
+	ClusteringAlgorithms *centroidLink = new CentroidLink();
+	ClusteringAlgorithms *completeLink = new CompleteLink();
+	ClusteringAlgorithms *kmeans = new KMeans();
+	ClusteringAlgorithms *singleLink = new SingleLink();
+
+
+	SettingsAlgorithm *settingsAverageLink = new SettingsAlgorithmAverageLink(2);
+	SettingsAlgorithm *settingsCentroidLink = new SettingsAlgorithmCentroidLink(2);
+	SettingsAlgorithm *settingsCompleteLink = new SettingsAlgorithmCompleteLink(2);
+	SettingsAlgorithm *settingsKmeans = new SettingsAlgorithmKMeans(2);
+	SettingsAlgorithm *settingsSingleLink = new SettingsAlgorithmSingleLink(2);
+
+	Similarity *similarity = new Euclidean();
+	Partition objPartitionKMeans = kmeans->run(settingsKmeans, pObjDataSet, similarity);
+
+	cout << endl << " -- Partition Generate by KMeans-- " << endl;
+	cout << "Number of objects in partition: " << objPartitionKMeans.getNumObjects() << endl;
+	cout << "Number of clusters in partition: " << objPartitionKMeans.getNumClusters() << endl;
+	cout << endl << "-- Clusters -- " << endl;
+	objPartitionKMeans.showCentroids();
+	cout << endl << "Label dos cluster >> ";
+	objPartitionKMeans.printClusterLabels();
+	cout << endl << " -- End Partition Generate by KMeans-- " << endl;
 
 	return 0;
 }
